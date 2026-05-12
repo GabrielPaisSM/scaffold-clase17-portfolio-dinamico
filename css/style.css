@@ -1,0 +1,255 @@
+/* ============================================================
+   ESTUDIO NORTE — Portfolio dinámico (Clase 17)
+   ============================================================ */
+
+:root {
+  --color-fondo: #fafafa;
+  --color-texto: #1a1a1a;
+  --color-tenue: #555555;
+  --color-acento: #1a1a1a;
+  --color-borde: #e2e2e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Cabecera ---------- */
+
+.cabecera {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.marca {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-acento);
+  text-decoration: none;
+}
+
+.enlace-nav {
+  color: var(--color-texto);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.enlace-nav:hover {
+  opacity: 0.6;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 6rem 0 4rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero .subtitulo {
+  font-size: 1.15rem;
+  color: var(--color-tenue);
+  max-width: 32em;
+}
+
+/* ---------- Encabezados de sección ---------- */
+
+.seccion-encabezado {
+  margin-bottom: 2.5rem;
+}
+
+.seccion-encabezado h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.seccion-encabezado p {
+  color: var(--color-tenue);
+  margin: 0;
+}
+
+/* ---------- Filtros ---------- */
+
+.seccion-proyectos {
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filtro {
+  background: transparent;
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.filtro:hover {
+  border-color: var(--color-acento);
+}
+
+.filtro.activo {
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  border-color: var(--color-acento);
+}
+
+/* ---------- Galería ---------- */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1.1rem 1.2rem 1.4rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-tenue);
+  margin-bottom: 0.4rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Contacto ---------- */
+
+.seccion-contacto {
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.formulario {
+  max-width: 560px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.form-control {
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+  border-color: var(--color-borde);
+}
+
+.form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.06);
+}
+
+.btn-enviar {
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  border: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-enviar:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-borde);
+  font-size: 0.85rem;
+  color: var(--color-tenue);
+}
+
+/* ============================================================
+   Animaciones al scroll
+   ------------------------------------------------------------
+   Estado inicial: invisible y desplazado 30px hacia abajo.
+   Cuando el JavaScript añade .visible, vuelve a su sitio con
+   un fade.
+   ============================================================ */
+
+.animar-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 3s ease,
+    transform 3s ease;
+}
+
+.animar-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
